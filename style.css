@@ -1,64 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
-    --light-orange: #fce8d8;
-    --salmon-pink: #ffb6c1;
-    --raspberry-rose: #a63e4b;
-    --chocolate-cosmos: #402020;
-    --fonte-titulo: "Jacques Francois Shadow", serif;
-    --fonte-texto: "Montserrat", sans-serif;
+    --roxo: rgb(80, 70, 170);
+    --bege: #f5f5dc;
+    --cinza-escuro: #333333;
+    --turquesa: #1abc9c;
+    --coral: #ff6b6b;
+    --fonte-titulo: "Fascinate Inline", system-ui;
+    --fonte-texto: "Gowun Batang", serif;
 }
 
 body {
-    background-color: var(--light-orange);
+    background-color: var(--bege);
     font-family: var(--fonte-texto);
-    color: var(--chocolate-cosmos);
-    display: flex;
-    flex-direction: column;
+    color: var(--cinza-escuro);
     height: 100vh;
 }
 
 header {
-    background-color: var(--raspberry-rose);
+    background-color: var(--roxo);
     text-align: center;
-    padding: 1.5rem 0;
 }
 
 h1 {
     font-family: var(--fonte-titulo);
-    font-size: 3rem;
-    color: var(--salmon-pink);
-    padding: 1rem 0;
+    font-size: 3em;
+    color: var(--coral);
+    padding: 0.5em 0;
 }
 
 nav {
     display: flex;
     justify-content: center;
+    font-weight: 400;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--light-orange);
-    font-size: 1.8rem;
-    margin: 0 1rem;
+    color: var(--bege);
+    font-size: 2em;
+    margin: 0 1em 0.5em 0;
 }
 
 nav a:hover {
-    color: var(--salmon-pink);
+    text-decoration: underline;
+    color: var(--coral);
+    transform: scale(0.9);
+    transition: transform 0.2s;
+}
+
+.caixa-grafico {
+    margin: 5rem;
+}
+
+.caixa-grafico__texto {
+    font-size: 1.5em;
+    background-color: var(--turquesa);
+    padding: 1em;
+    border-radius: 20px;
+    border: var(--cinza-escuro) double 10px;
+}
+
+span {
+    font-family: var(--fonte-titulo);
+    color: var(--roxo);
+    font-size: 1.1em;
 }
 
 footer {
-    text-align: center;
-    background-color: var(--raspberry-rose);
-    color: var(--light-orange);
-    padding: 1rem 0;
-    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--roxo);
+    color: var(--bege);
+    width: 100%;
+    height: 2em;
+    margin-top: 2em;
+    font-size: 1.5em;
 }
-
-
