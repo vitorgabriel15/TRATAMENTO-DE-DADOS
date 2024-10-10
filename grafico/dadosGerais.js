@@ -1,34 +1,22 @@
-const url = 'https://raw.githubusercontent.com/hericxzin/guardarnotebook/refs/heads/main/books.json';
+const url = 'https://raw.githubusercontent.com/vitorgabriel15/2024-API-TENIS/refs/heads/main/dados.json'; 
 
-async function visualizarInfos() {
-    try {
-        const res = await fetch(url);
- 
-        if (!res.ok) {
-            throw new Error('Network response was not ok ' + res.statusText);
-        }
+async function vizualizarInformacoes() {
+    const res = await fetch(url);
+    const dados = await res.json();
 
-        const dados = await res.json();
-    
-        if (dados.length === 0) {
-            throw new Error('Nenhum dado encontrado');
-        }
+    const comidaName = dados[0].comida;
+    const comidaVotos = dados[0].votos;
+    const comidaComentario = dados[0].comentario;
 
-        const notebookMais = dados[0].notebook;
-        const NumeroVotos = dados[0].votos;
-        const comentarios = dados[0].comentario;
+    console.log(dados);
 
-        console.log(comentarios);
+    const paragrafo = document.createElement('p');
+    paragrafo.classList.add('caixa-grafico__texto');
 
-        const paragrafo = document.createElement("p");
-        paragrafo.classList.add("caixa-grafico__texto");
-        paragrafo.innerHTML = `Essa pesquisa buscou fazer um levantamento dos notebooks mais usados pelo mundo.foi possível concluir que o notebook <span>${notebookMais}</span> ficou em primeiro lugar, com aproximadamente <span>${NumeroVotos}</span> votos. O principal comentário sobre o notebook foi: <span>${comentarios}</span>`;
-        
-        const caixa = document.getElementById("caixa-grafico");
-        caixa.appendChild(paragrafo);
-    } catch (error) {
-        console.error('Houve um problema com a requisição Fetch:', error);
-    }
+    paragrafo.innerHTML = `Em busca de saber quais são as comidas mais apreciadas, foi realizada uma série de pesquisas. Os dados indicam que a comida mais destacada é <span>${comidaName}</span>, com <span>${comidaVotos}</span> votos, e o comentário sobre ela é: "<span>${comidaComentario}</span>".`;
+
+    const caixa = document.getElementById('caixa-grafico');
+    caixa.appendChild(paragrafo);
 }
 
-visualizarInfos();
+vizualizarInformacoes();

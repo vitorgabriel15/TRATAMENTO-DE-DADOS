@@ -1,27 +1,23 @@
-import { pegarCSS } from "./comum.js"
-
-async function criaGraficoBarra() {
-    const url = "https://github.com/hericxzin/guardarnotebook.git"
-    const res = await fetch(url)
-    const dados = await res.json()
-    const modelo = Object.keys(dados)
-    const vendas = Object.values(dados)
+async function criarGraficoBarra() {
+    const url = "https://raw.githubusercontent.com/vitorgabriel15/2024-API-TENIS/refs/heads/main/barra.json"; 
+    const res = await fetch(url);
+    const dados = await res.json();
+    
+    const comidas = dados.map(item => item.nome);
+    const votos = dados.map(item => item.votos);
 
     const data = [
         {
-            x: modelo,
-            y: vendas,
-            type: 'bar',
-            marker: {
-                color: pegarCSS('--salmon-pink') 
-            }
+            x: ferramentas,
+            y: votos,
+            type: "bar"
         }
     ]
-
-    const grafico = document.createElement('div')
-    grafico.className = 'grafico'
-    document.getElementById('caixa-grafico').appendChild(grafico)
-    Plotly.newPlot(grafico, data)
+    
+    const grafico = document.createElement("div");
+    grafico.className = "grafico";
+    document.getElementById("caixa-grafico").appendChild(grafico);
+    Plotly.newPlot(grafico, data);
 }
 
-criaGraficoBarra()
+criarGraficoBarra();

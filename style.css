@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=SUSE:wght@100..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --roxo: rgb(80, 70, 170);
     --bege: #f5f5dc;
     --cinza-escuro: #333333;
     --turquesa: #1abc9c;
     --coral: #ff6b6b;
-    --fonte-titulo: "Fascinate Inline", system-ui;
-    --fonte-texto: "Gowun Batang", serif;
+    --fonte-titulo: "Bebas Neue", sans-serif;
+    --fonte-texto: "SUSE", sans-serif;
 }
 
 body {
@@ -49,6 +57,10 @@ nav a:hover {
 
 .caixa-grafico {
     margin: 5rem;
+    font-size: 1.5em;
+    background-color: var(--turquesa);
+    padding: 1em;
+    border-radius: 20px;
 }
 
 .caixa-grafico__texto {
